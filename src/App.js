@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  let [horizonatalSteps, setHorizontalSteps] = useState(0);
+  let [horizontalSteps, setHorizontalSteps] = useState(0);
   let [verticalSteps, setVerticalSteps] = useState(0);
   let [upDisabled, setUpDisabled] = useState(true);
   let [downDisabled, setDownDisabled] = useState(false);
@@ -10,8 +10,8 @@ function App() {
   let [rightDisabled, setRightDisabled] = useState(false);
 
   useEffect(() => {
-    console.log(horizonatalSteps, verticalSteps);
-    if (horizonatalSteps === 0) {
+    console.log(horizontalSteps, verticalSteps);
+    if (horizontalSteps === 0) {
       setLeftDisabled(true);
     } else {
       setLeftDisabled(false);
@@ -21,7 +21,7 @@ function App() {
     } else {
       setUpDisabled(false);
     }
-    if (horizonatalSteps === 9) {
+    if (horizontalSteps === 9) {
       setRightDisabled(true);
     } else {
       setRightDisabled(false);
@@ -31,7 +31,7 @@ function App() {
     } else {
       setDownDisabled(false);
     }
-  }, [horizonatalSteps, verticalSteps]);
+  }, [horizontalSteps, verticalSteps]);
 
   function moveUp() {
     setVerticalSteps(verticalSteps - 1);
@@ -41,10 +41,10 @@ function App() {
   }
 
   function moveRight() {
-    setHorizontalSteps(horizonatalSteps + 1);
+    setHorizontalSteps(horizontalSteps + 1);
   }
   function moveLeft() {
-    setHorizontalSteps(horizonatalSteps - 1);
+    setHorizontalSteps(horizontalSteps - 1);
   }
   return (
     <div className="game-container">
@@ -85,7 +85,7 @@ function App() {
           className="block"
           style={{
             top: 50 * verticalSteps + "px",
-            left: 50 * horizonatalSteps + "px",
+            left: 50 * horizontalSteps + "px",
           }}
         ></div>
       </div>
